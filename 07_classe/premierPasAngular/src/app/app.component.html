@@ -1,0 +1,15 @@
+<h1>Exercice Premier Pas</h1>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, repellat!</p>
+<h2>{{monTexte}}</h2>
+<p>La taille de mon texte est : {{monTexte.length}} caractères</p>
+<button class="btn btn-primary my-2" disabled>
+  Disabled
+</button>
+<button class="btn btn-primary my-2" disabled="{{!boutonActif}}">
+  Effacer
+</button>
+<button class="btn btn-primary my-2" [disabled]="!boutonActif" >
+   Disabled 3
+</button>
+<p [innerText]="boutonActif"></p>
