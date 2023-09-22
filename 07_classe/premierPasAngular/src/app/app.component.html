@@ -1,15 +1,50 @@
+<title>Exercice Premier Pas</title>
 <h1>Exercice Premier Pas</h1>
+<button class="btn btn-warning my-2 m-1" (click)="cachertexte()">
+  {{ isAvailable ? 'Afficher' : 'cacher' }}
+</button>
+<br>
+<button class="btn btn-primary my-2 m-1" (click)="onBoutonClique()">
+  Cliquez ici
+</button>
 
+<div *ngIf="isAvailable">
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, repellat!</p>
 <h2>{{monTexte}}</h2>
 <p>La taille de mon texte est : {{monTexte.length}} caractères</p>
-<button class="btn btn-primary my-2" disabled>
-  Disabled
+<button class="btn btn-primary my-2 m-1" (click)="onBoutonClique()">
+  Bascule
 </button>
-<button class="btn btn-primary my-2" disabled="{{!boutonActif}}">
+
+<button class="btn btn-danger my-2 m-1" (click)="effacerTexte()">
   Effacer
 </button>
-<button class="btn btn-primary my-2" [disabled]="!boutonActif" >
-   Disabled 3
+
+<button class="btn btn-primary my-2 m-1" [disabled]="!boutonActif" (click)="onBoutonClique()">
+   desactiver ce button
 </button>
-<p [innerText]="boutonActif"></p>
+
+<p class="m-1" [innerText]="boutonActif"></p>
+<input class="m-1" type="text" (input)="inputOfText($event)" [value]="monTexte">
+<br>
+
+<p  class="m-1">{{monAutreTexte}}</p>
+<input class="m-1" type="text" [(ngModel)]="monAutreTexte">
+<br>
+
+<div>
+  <span>{{monCarre(monNombre)}}</span>
+</div>
+<br>
+
+<ul>
+  <li *ngFor="let livre of listeLivres;
+  let i = index" [class.odd]="i % 2 === 1">
+    {{livre.titre}}
+  </li>
+</ul>
+<br>
+
+<app-alpha></app-alpha>
+
+</div>
