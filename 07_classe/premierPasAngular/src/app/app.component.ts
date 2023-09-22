@@ -54,8 +54,7 @@ export class AppComponent {
   monCarre(valeur: number) {
     return Math.sqrt(valeur);
   }
-
-
+  
 }
 
 

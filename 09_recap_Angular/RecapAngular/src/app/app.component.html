@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Moyenne du groupe : {{ calculMoyenne() | number: '1.2-2' }} %</h1>
+
+  <div *ngFor="let student of uneclass" class="mt-4">
+    <h3>{{ student.nom }}</h3>
+    
+    <progress
+      class="progress-bar "
+      [ngClass]="{
+        'bg-danger': isBelowPassing(student.note),
+        'bg-success': isAboveAverage(student.note)
+      }"
+      [value]="student.note"
+      [max]="100"
+    ></progress>
+
+    <!-- Afficher le composant "alert" ou "success" en fonction des critères -->
+    <app-alert *ngIf="isBelowPassing(student.note)"></app-alert>
+    <app-success *ngIf="isAboveAverage(student.note)"></app-success>
+  </div>
+</div>
