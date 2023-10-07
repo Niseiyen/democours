@@ -1,0 +1,18 @@
+<table>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Heure</th>
+            <th scope="col">Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of Logs">
+            <th scope="row">{{log.date | date : "yyyy-MM-dd"}}</th>
+            <td>{{log.date | date : "HH-mm"}}</td>
+            <td>{{log.message}}</td>
+          </tr>
+        </tbody>
+      </table>
+</table>

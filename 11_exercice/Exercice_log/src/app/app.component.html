@@ -1,0 +1,23 @@
+<h1>Demo Log</h1>
+
+<div class="container border border-warning border-4">
+    <p class="text-center">App Component (parent)</p>
+    <div class="row m-5">
+        <div class="col-6 border border-danger border-2">
+            <p>Composant Boutton</p>
+            <app-bouton 
+                (logEvent)="addLog($event)">
+            </app-bouton>
+        </div>
+        <div class="col-6 border border-primary border-2">
+            <p>Composant Tableau</p>
+            <app-tableau 
+                [logEnfant]="mesLog">
+            </app-tableau>
+        </div>
+    </div>
+    <p class="border brder-2 border-info">
+        Contenu des logs dans le parents : [{{mesLog | json}}]
+    </p>
+</div>
+
