@@ -1,2 +1,16 @@
-Afficher la liste de nom des employee (juste le nom)
-Et passer le number ID de l'employé au component app-user-detail
+
+<div class="container-fluid border border-primary border-2">
+    <div class="row">
+        <div class="col-4">
+            Afficher la liste de nom des employee (juste le nom)
+            Et passer le number ID de l'employé au component app-user-detail
+            <div class="border border-danger border-3 p-2"
+            *ngFro="let employee of employees; index as idx">
+            <a [routerLink]="['./', employee.id]">{{employee.first_name}}</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
